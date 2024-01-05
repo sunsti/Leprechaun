@@ -90,9 +90,8 @@ class BonusView: UIView {
         startImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(startBonusLabel.snp.bottom).offset(64)
-            make.bottom.equalTo(pointLabel.snp.top).offset(-54)
+            make.bottom.equalTo(pointLabel.snp.top)
         }
-   
     }
     
     private func adjustFontSizesForScreenSize() {
@@ -104,6 +103,4 @@ class BonusView: UIView {
             pointLabel.font = UIFont.customFont(font: .mont, style: .black, size: 40)
         }
     }
-
-    
 }

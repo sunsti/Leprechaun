@@ -26,11 +26,13 @@ class BonusVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        contentView.thankButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        
+        tappedButtons()
     }
     
+    private func tappedButtons() {
+        contentView.thankButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+
+    }
     @objc func buttonTapped() {
         balanse += 100
         Settings.points = balanse

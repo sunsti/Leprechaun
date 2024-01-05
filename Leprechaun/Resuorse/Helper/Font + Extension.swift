@@ -9,10 +9,10 @@ extension UIFont {
     enum CustomFonts: String {
         case mont = "mont"
     }
-
+    
     enum CustomFontStyle: String {
         case black = "-black"
-        case light = "-ligth"
+        case light = "-light"
     }
     
     static func customFont(
