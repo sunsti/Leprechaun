@@ -48,7 +48,7 @@ class GiftCell: UITableViewCell {
     
     private(set) lazy var giftDetailUseConteiner: GradientView = {
         let view = GradientView()
-        view.hasGradientBorder = true
+        view.layer.cornerRadius = 8
         return view
     }()
     
@@ -63,6 +63,7 @@ class GiftCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 24 , bottom: 0, right: 24))
+        
     }
     
     func setupUI(){

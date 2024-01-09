@@ -21,6 +21,7 @@ class NewsCell: UITableViewCell {
     
     private(set) lazy var newsImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -28,7 +29,7 @@ class NewsCell: UITableViewCell {
     private(set) lazy var newsDetailUseConteiner: UIView = {
         let view = UIView()
         view.clipsToBounds = true
-        view.layer.cornerRadius = 8
+//        view.layer.cornerRadius = 8
         return view
     }()
     

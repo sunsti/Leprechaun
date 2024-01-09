@@ -15,18 +15,7 @@ class CardVC: UIViewController {
         view = CardView()
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let gradientBorder = getGradientLayerLightGreen(bounds: contentView.bonusCardQRConteinerView.bounds)
-        let gradientView = getGradientLayerDarkGreen(bounds: contentView.bonusCardQRConteinerView.bounds)
 
-        contentView.bonusCardQRConteinerView.backgroundColor = gradientColor(bounds: contentView.bonusCardQRConteinerView.bounds, gradientLayer: gradientView)
-        contentView.bonusCardQRConteinerView.layer.borderColor = gradientColor(bounds: contentView.bonusCardQRConteinerView.bounds, gradientLayer: gradientBorder)?.cgColor
-        contentView.cardImage.layer.borderColor = gradientColor(bounds: contentView.bonusCardQRConteinerView.bounds, gradientLayer: gradientBorder)?.cgColor
-
-
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.backBtn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)

@@ -20,13 +20,9 @@ class InfoView: UIView {
         return button
     }()
 
-    private(set) lazy var imageConteinerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.65).cgColor
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = .init(width: 0, height: 8)
-        view.layer.shadowRadius = 14
+    private(set) lazy var imageConteinerView: GradientView = {
+        let view = GradientView()
+        view.layer.cornerRadius = 8
         return view
     }()
     
@@ -35,7 +31,6 @@ class InfoView: UIView {
         imageView.image = UIImage(named: "AppIcon")
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
-        imageView.layer.borderWidth = 1
         return imageView
     }()
     

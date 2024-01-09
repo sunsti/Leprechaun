@@ -7,22 +7,22 @@ import UIKit
 import SnapKit
 
 class OnboadingView: UIView {
-    
-    private(set) lazy var backView: UIImageView = {
+        
+    private lazy var backView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage.bg
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    private(set) lazy var startImageView: UIImageView = {
+    private lazy var startImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .clevers
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private(set) lazy var loadLabel: UILabel = {
+    private lazy var loadLabel: UILabel = {
         let label = UILabel()
         label.text = "Loading".uppercased()
         label.font = UIFont.customFont(font: .mont, style: .black, size: 24)
@@ -31,14 +31,17 @@ class OnboadingView: UIView {
         return label
     }()
  
-    
+    private(set) lazy var loadView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        return view
+    }()
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
         setUpConstraints()
-//        adjustFontSizesForScreenSize()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -46,9 +49,7 @@ class OnboadingView: UIView {
     }
     
     private func setupUI() {
-        addSubview(backView)
-        addSubview(startImageView)
-        addSubview(loadLabel)
+        [backView,startImageView,loadLabel,loadView] .forEach(addSubview(_:))
         
     }
     private func setUpConstraints(){
@@ -66,15 +67,10 @@ class OnboadingView: UIView {
             make.centerX.equalToSuperview()
         }
 
+        loadView.snp.makeConstraints { (make) in
+            make.top.equalTo(loadLabel.snp.bottom).offset(24)
+            make.left.right.equalToSuperview().inset(126)
+            make.height.equalTo(1)
+        }
     }
-    
-//    private func adjustFontSizesForScreenSize() {
-//        let screenSize = UIScreen.main.bounds
-//        let smallerScreenHeight: CGFloat = 812
-//
-//        if screenSize.height < smallerScreenHeight {
-//            startBonusLabel.font = UIFont.customFont(font: .mont, style: .black, size: 48)
-//            pointLabel.font = UIFont.customFont(font: .mont, style: .black, size: 40)
-//        }
-//    }
 }

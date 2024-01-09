@@ -13,9 +13,8 @@ class CardView: UIView {
         return imageView
     }()
     
-    private(set) lazy var bonusCardQRConteinerView: UIView = {
-        let view = UIView()
-        view.layer.borderWidth = 1
+    private(set) lazy var bonusCardQRConteinerView: GradientView = {
+        let view = GradientView()
         view.layer.cornerRadius = 8
         return view
     }()
@@ -32,14 +31,9 @@ class CardView: UIView {
         return button
     }()
     
-    private(set) lazy var bonusCardImageConteinerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        view.layer.borderWidth = 1
-        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.65).cgColor
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = .init(width: 0, height: 8)
-        view.layer.shadowRadius = 14
+    private(set) lazy var bonusCardImageConteinerView: GradientView = {
+        let view = GradientView()
+        view.layer.cornerRadius = 8
         return view
     }()
 
@@ -107,7 +101,7 @@ class CardView: UIView {
         }
         
         cardImage.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+            make.edges.equalToSuperview()
             make.size.equalTo(180)
         }
         

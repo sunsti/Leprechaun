@@ -29,7 +29,7 @@ class GiftDetailView: UIView {
     
     private lazy var giftDetailUseConteiner: GradientView = {
         let view = GradientView()
-        view.hasGradientBorder = true
+        view.layer.cornerRadius = 8
         return view
     }()
     

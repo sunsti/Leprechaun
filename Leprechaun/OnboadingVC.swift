@@ -17,6 +17,16 @@ class OnboadingVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        start()
     }
     
+    private func start() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            let vc = HomeVC()
+            let navigationController = UINavigationController(rootViewController: vc)
+            navigationController.modalPresentationStyle = .fullScreen
+            self.present(navigationController, animated: true)
+            navigationController.setNavigationBarHidden(true, animated: false)
+        }
+    }
 }

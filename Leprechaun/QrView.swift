@@ -30,7 +30,7 @@ class QrView: UIView {
 
     private(set) lazy var qrConteiner: GradientView = {
         let view = GradientView()
-        view.hasGradientBorder = true
+        view.layer.cornerRadius = 8
         return view
     }()
     

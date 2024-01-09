@@ -65,9 +65,7 @@ class NewsDetailView: UIView {
     
     private(set) lazy var newsConteinerView: GradientView = {
         let gradientView = GradientView()
-//        gradientView.clipsToBounds = true
         gradientView.layer.cornerRadius = 8
-        gradientView.hasGradientBorder = true
         return gradientView
     }()
 
