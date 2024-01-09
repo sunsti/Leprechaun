@@ -24,13 +24,12 @@ class CardView: UIView {
         return imageView
     }()
 
-
     private(set) lazy var backBtn: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(.backBtn, for: .normal)
         return button
     }()
-    
+
     private(set) lazy var bonusCardImageConteinerView: GradientView = {
         let view = GradientView()
         view.layer.cornerRadius = 8
@@ -68,6 +67,7 @@ class CardView: UIView {
         super.init(frame: frame)
         setupUI()
         setupConstraints()
+        adjustFontSizesForScreenSize()
     }
     
     required init?(coder: NSCoder) {
@@ -76,7 +76,7 @@ class CardView: UIView {
     
     
     private func setupUI() {
-        [backgroundImage,backBtn,accountLabel,scoreLabel,bonusCardQRConteinerView,bonusCardImageConteinerView].forEach(addSubview(_:))
+        [backgroundImage,backBtn,bonusCardImageConteinerView,accountLabel,scoreLabel,bonusCardQRConteinerView,].forEach(addSubview(_:))
         bonusCardImageConteinerView.addSubview(cardImage)
         bonusCardQRConteinerView.addSubview(qrCodeImageView)
 
@@ -88,21 +88,19 @@ class CardView: UIView {
             make.edges.equalToSuperview()
         }
         
-        
         backBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(24)
-            make.top.equalTo(safeAreaLayoutGuide).offset(10)
+            make.top.equalToSuperview().offset(56)
         }
         
         bonusCardImageConteinerView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(backBtn.snp.bottom).offset(24)
-            make.bottom.equalTo(accountLabel.snp.top).offset(-56)
+            make.size.equalTo(180)
         }
         
         cardImage.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
-            make.size.equalTo(180)
         }
         
         accountLabel.snp.makeConstraints { (make) in
@@ -123,6 +121,19 @@ class CardView: UIView {
         }
         qrCodeImageView.snp.makeConstraints { (make) in
             make.top.bottom.right.left.equalToSuperview().inset(10)
+        }
+    }
+    
+    private func adjustFontSizesForScreenSize() {
+        let screenSize = UIScreen.main.bounds
+        let smallerScreenHeight: CGFloat = 812
+
+        if screenSize.height < smallerScreenHeight {
+            bonusCardImageConteinerView.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.top.equalTo(backBtn.snp.bottom)
+                make.size.equalTo(150)
+            }
         }
     }
 }

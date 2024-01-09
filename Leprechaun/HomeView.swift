@@ -140,6 +140,7 @@ class HomeView: UIView {
         }
 
     }
+    
     private func adjustFontSizesForScreenSize() {
         let screenSize = UIScreen.main.bounds
         let smallerScreenHeight: CGFloat = 812

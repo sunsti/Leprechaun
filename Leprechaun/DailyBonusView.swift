@@ -102,6 +102,7 @@ class DailyBonusView: UIView {
     private(set)  var timerImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .leprikonImg
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -116,7 +117,7 @@ class DailyBonusView: UIView {
         super.init(frame: frame)
         setupUI()
         setUpConstraints()
-        //        adjustFontSizesForScreenSize()
+        adjustFontSizesForScreenSize()
         
     }
     
@@ -167,18 +168,20 @@ class DailyBonusView: UIView {
         }
         
         bonusImageView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
+            make.left.right.equalToSuperview().inset(100)
             make.top.equalTo(bonusLabel.snp.bottom).offset(12)
-            make.height.equalTo(154)
-            make.width.equalTo(194)
+            make.bottom.equalTo(blurView.snp.top).offset(-52)
         }
 
         valuePicker.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(20)
+
         }
         
         blurView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(20)
             make.width.equalTo(296)
             make.height.equalTo(180)
         }
@@ -228,14 +231,13 @@ class DailyBonusView: UIView {
      
     }
     
-    //    private func adjustFontSizesForScreenSize() {
-    //        let screenSize = UIScreen.main.bounds
-    //        let smallerScreenHeight: CGFloat = 812
-    //
-    //        if screenSize.height < smallerScreenHeight {
-    //            startBonusLabel.font = UIFont.customFont(font: .mont, style: .black, size: 48)
-    //            pointLabel.font = UIFont.customFont(font: .mont, style: .black, size: 40)
-    //        }
-    //    }
+        private func adjustFontSizesForScreenSize() {
+            let screenSize = UIScreen.main.bounds
+            let smallerScreenHeight: CGFloat = 812
+    
+            if screenSize.height < smallerScreenHeight {
+                bonusLabel.font = UIFont.customFont(font: .mont, style: .black, size: 24)
+            }
+        }
 }
 

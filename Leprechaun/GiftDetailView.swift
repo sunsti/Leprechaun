@@ -98,6 +98,7 @@ class GiftDetailView: UIView {
     private(set) lazy var cointImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .coint
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
@@ -106,7 +107,7 @@ class GiftDetailView: UIView {
         
         setupUI()
         setupConstraints()
-        
+        adjustFontSizesForScreenSize()
     }
     
     required init?(coder: NSCoder) {
@@ -191,6 +192,17 @@ class GiftDetailView: UIView {
         ingredientsScoreLabel.snp.makeConstraints { make in
             make.top.equalTo(ingredientsLabel.snp.bottom)
             make.left.equalToSuperview().offset(20)
+        }
+    }
+    private func adjustFontSizesForScreenSize() {
+        let screenSize = UIScreen.main.bounds
+        let smallerScreenHeight: CGFloat = 812
+
+        if screenSize.height < smallerScreenHeight {
+            creditsScoreLabel.font = UIFont.customFont(font: .mont, style: .black, size: 44)
+            cointImage.snp.makeConstraints { make in
+                make.left.equalTo(ingredientsLabel.snp.right).offset(118)
+            }
         }
     }
 }

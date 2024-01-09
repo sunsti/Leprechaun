@@ -24,7 +24,7 @@ class OnboadingView: UIView {
     
     private lazy var loadLabel: UILabel = {
         let label = UILabel()
-        label.text = "Loading".uppercased()
+        label.text = "Loading...".uppercased()
         label.font = UIFont.customFont(font: .mont, style: .black, size: 24)
         label.textColor = .white
         label.textAlignment = .center
