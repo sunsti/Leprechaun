@@ -8,6 +8,8 @@ import SnapKit
 
 class OnboadingView: UIView {
         
+    private var loadViewWidthConstraint: Constraint?
+
     private lazy var backView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage.bg
@@ -33,15 +35,15 @@ class OnboadingView: UIView {
  
     private(set) lazy var loadView: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = .gradGreenOne
         return view
     }()
 
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
         setUpConstraints()
+        animateLoadView()
     }
     
     required init?(coder: NSCoder) {
@@ -52,6 +54,14 @@ class OnboadingView: UIView {
         [backView,startImageView,loadLabel,loadView] .forEach(addSubview(_:))
         
     }
+            
+    private func animateLoadView() {
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: [.curveLinear], animations: {
+            self.loadViewWidthConstraint?.update(offset: -252) // Ширина вашего loadView
+            self.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
     private func setUpConstraints(){
         
         backView.snp.makeConstraints { (make) in
@@ -71,6 +81,7 @@ class OnboadingView: UIView {
             make.top.equalTo(loadLabel.snp.bottom).offset(24)
             make.left.right.equalToSuperview().inset(126)
             make.height.equalTo(1)
+            loadViewWidthConstraint = make.width.equalTo(0).constraint
         }
     }
 }

@@ -21,7 +21,7 @@ class OnboadingVC: UIViewController {
     }
     
     private func start() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
             let vc = HomeVC()
             let navigationController = UINavigationController(rootViewController: vc)
             navigationController.modalPresentationStyle = .fullScreen
