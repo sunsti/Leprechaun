@@ -25,12 +25,20 @@ class NewsCell: UITableViewCell {
         return imageView
     }()
     
-    private(set) lazy var newsDetailUseConteiner: GradientView = {
+    private(set) lazy var newsDetailUseConteiner: UIView = {
+        let view = UIView()
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 8
+        return view
+    }()
+    
+    private(set) lazy var gradView: GradientView = {
         let gradientView = GradientView()
         gradientView.clipsToBounds = true
         gradientView.layer.cornerRadius = 8
         return gradientView
     }()
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -45,7 +53,7 @@ class NewsCell: UITableViewCell {
         }
     
         func setupUI() {
-            
+            contentView.addSubview(gradView)
             contentView.addSubview(newsDetailUseConteiner)
             contentView.backgroundColor = .clear
             contentView.layer.cornerRadius = 8
@@ -57,6 +65,10 @@ class NewsCell: UITableViewCell {
         
         func setupConstraints() {
             
+            gradView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()           
+            }
+
             newsDetailUseConteiner.snp.makeConstraints { make in
                 make.top.left.right.bottom.equalToSuperview().inset(12)
                 make.bottom.equalToSuperview()

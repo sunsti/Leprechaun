@@ -51,6 +51,8 @@
 		18DD7CFE2B4716F2003C47AC /* GradientBonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD7CFD2B4716F2003C47AC /* GradientBonusView.swift */; };
 		18DD7D012B481EF4003C47AC /* DailyPrizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD7D002B481EF4003C47AC /* DailyPrizeVC.swift */; };
 		18DD7D032B481EFA003C47AC /* DailyPrizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD7D022B481EF9003C47AC /* DailyPrizeView.swift */; };
+		18DD7D062B4D4C8F003C47AC /* OnboadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD7D052B4D4C8F003C47AC /* OnboadingVC.swift */; };
+		18DD7D082B4D4C95003C47AC /* OnboadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD7D072B4D4C95003C47AC /* OnboadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		18DD7CFD2B4716F2003C47AC /* GradientBonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBonusView.swift; sourceTree = "<group>"; };
 		18DD7D002B481EF4003C47AC /* DailyPrizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPrizeVC.swift; sourceTree = "<group>"; };
 		18DD7D022B481EF9003C47AC /* DailyPrizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPrizeView.swift; sourceTree = "<group>"; };
+		18DD7D052B4D4C8F003C47AC /* OnboadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboadingVC.swift; sourceTree = "<group>"; };
+		18DD7D072B4D4C95003C47AC /* OnboadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,14 +161,15 @@
 		18768C082B3F244D006D675E /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				18768C382B3F294C006D675E /* Profile */,
+				18DD7D042B4D4C77003C47AC /* Onboarding */,
+				18768C092B3F2483006D675E /* Bonus */,
+				18768C0A2B3F248F006D675E /* Home */,
+				18768C0B2B3F24AF006D675E /* Card */,
+				18768C0C2B3F24BB006D675E /* Gifts */,
+				18768C0D2B3F24C4006D675E /* News */,
 				18768C0F2B3F24FD006D675E /* DailyBonus */,
 				18768C0E2B3F24CA006D675E /* Info */,
-				18768C0D2B3F24C4006D675E /* News */,
-				18768C0C2B3F24BB006D675E /* Gifts */,
-				18768C0B2B3F24AF006D675E /* Card */,
-				18768C0A2B3F248F006D675E /* Home */,
-				18768C092B3F2483006D675E /* Bonus */,
+				18768C382B3F294C006D675E /* Profile */,
 			);
 			name = Flow;
 			sourceTree = "<group>";
@@ -308,6 +313,15 @@
 			name = DailyPrize;
 			sourceTree = "<group>";
 		};
+		18DD7D042B4D4C77003C47AC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				18DD7D052B4D4C8F003C47AC /* OnboadingVC.swift */,
+				18DD7D072B4D4C95003C47AC /* OnboadingView.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -397,11 +411,13 @@
 				18768C622B45D412006D675E /* QrView.swift in Sources */,
 				18768C232B3F278A006D675E /* GiftsView.swift in Sources */,
 				18768C332B3F27D1006D675E /* UD.swift in Sources */,
+				18DD7D082B4D4C95003C47AC /* OnboadingView.swift in Sources */,
 				18768C172B3F2759006D675E /* BonusVC.swift in Sources */,
 				18768C432B45C369006D675E /* NewsCell.swift in Sources */,
 				18768C662B45D552006D675E /* GiftDetailView.swift in Sources */,
 				18768C2D2B3F27B0006D675E /* DailyBonusVC.swift in Sources */,
 				18768C352B3F2868006D675E /* Font + Extension.swift in Sources */,
+				18DD7D062B4D4C8F003C47AC /* OnboadingVC.swift in Sources */,
 				18768C502B45C4B3006D675E /* ServiceData.swift in Sources */,
 				18768C192B3F2764006D675E /* HomeVC.swift in Sources */,
 				18768C2F2B3F27B5006D675E /* DailyBonusView.swift in Sources */,

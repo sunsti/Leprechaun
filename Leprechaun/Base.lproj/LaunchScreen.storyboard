@@ -17,21 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="VDj-Eb-SAV">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="VDj-Eb-SAV">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clevers" translatesAutoresizingMaskIntoConstraints="NO" id="Lid-ja-Uhm">
+                                <rect key="frame" x="53" y="281.66666666666669" width="287" height="289.00000000000006"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VDj-Eb-SAV" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="7rl-RG-wW1"/>
-                            <constraint firstItem="VDj-Eb-SAV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EX1-Fw-ac5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VDj-Eb-SAV" secondAttribute="bottom" id="Sys-qc-CJM"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="VDj-Eb-SAV" secondAttribute="bottom" id="cNj-Rc-7xl"/>
+                            <constraint firstItem="Lid-ja-Uhm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0ue-pW-ltu"/>
+                            <constraint firstItem="Lid-ja-Uhm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Kvl-IE-XIL"/>
+                            <constraint firstItem="VDj-Eb-SAV" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="PVS-7f-ltD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VDj-Eb-SAV" secondAttribute="trailing" id="cfk-vJ-7Zo"/>
                             <constraint firstItem="VDj-Eb-SAV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gcY-Ng-O6x"/>
                             <constraint firstItem="VDj-Eb-SAV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hak-Rf-vDh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VDj-Eb-SAV" secondAttribute="trailing" id="xHo-Ks-ofs"/>
+                            <constraint firstAttribute="bottom" secondItem="VDj-Eb-SAV" secondAttribute="bottom" id="ybZ-J5-z2q"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -42,6 +45,7 @@
     </scenes>
     <resources>
         <image name="bg" width="393" height="852"/>
+        <image name="clevers" width="287" height="289"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
