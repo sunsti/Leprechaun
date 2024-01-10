@@ -8,7 +8,6 @@ import SnapKit
 
 class OnboadingView: UIView {
         
-    private var loadViewWidthConstraint: Constraint?
 
     private lazy var backView: UIImageView = {
         let imageView = UIImageView()
@@ -33,17 +32,18 @@ class OnboadingView: UIView {
         return label
     }()
  
-    private(set) lazy var loadView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gradGreenOne
-        return view
-    }()
-
+    private(set) lazy var loadView: UIProgressView = {
+        let progressView = UIProgressView()
+        progressView.progressViewStyle = .default
+        progressView.progress = 0.0
+        progressView.progressTintColor = .gradGreenThree
+        return progressView
+     }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
         setUpConstraints()
-        animateLoadView()
     }
     
     required init?(coder: NSCoder) {
@@ -52,16 +52,8 @@ class OnboadingView: UIView {
     
     private func setupUI() {
         [backView,startImageView,loadLabel,loadView] .forEach(addSubview(_:))
-        
     }
             
-    private func animateLoadView() {
-        UIView.animate(withDuration: 2.0, delay: 0.0, options: [.curveLinear], animations: {
-            self.loadViewWidthConstraint?.update(offset: -252) // Ширина вашего loadView
-            self.layoutIfNeeded()
-        }, completion: nil)
-    }
-    
     private func setUpConstraints(){
         
         backView.snp.makeConstraints { (make) in
@@ -79,9 +71,8 @@ class OnboadingView: UIView {
 
         loadView.snp.makeConstraints { (make) in
             make.top.equalTo(loadLabel.snp.bottom).offset(24)
-            make.left.right.equalToSuperview().inset(126)
-            make.height.equalTo(1)
-            loadViewWidthConstraint = make.width.equalTo(0).constraint
+            make.centerX.equalToSuperview()
+            make.width.equalTo(126)
         }
     }
 }

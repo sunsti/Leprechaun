@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1850C5942B4EAF35009F62A3 /* UiViewProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850C5932B4EAF35009F62A3 /* UiViewProgress.swift */; };
 		18768BF42B3F23D3006D675E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18768BF32B3F23D3006D675E /* AppDelegate.swift */; };
 		18768BF62B3F23D3006D675E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18768BF52B3F23D3006D675E /* SceneDelegate.swift */; };
 		18768BFD2B3F23D5006D675E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18768BFC2B3F23D5006D675E /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1850C5932B4EAF35009F62A3 /* UiViewProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewProgress.swift; sourceTree = "<group>"; };
 		18768BF02B3F23D3006D675E /* Leprechaun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leprechaun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18768BF32B3F23D3006D675E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18768BF52B3F23D3006D675E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				18768C342B3F2868006D675E /* Font + Extension.swift */,
 				18768C672B45F139006D675E /* UIview + Gradient.swift */,
+				1850C5932B4EAF35009F62A3 /* UiViewProgress.swift */,
 				18DD7CFD2B4716F2003C47AC /* GradientBonusView.swift */,
 				18768C362B3F2888006D675E /* Settings.swift */,
 				18768C402B45BCF2006D675E /* Extesion Gradient.swift */,
@@ -407,6 +410,7 @@
 				18768C682B45F139006D675E /* UIview + Gradient.swift in Sources */,
 				18768C562B45D3BB006D675E /* GiftsModel.swift in Sources */,
 				18768C642B45D549006D675E /* GiftDetailVC.swift in Sources */,
+				1850C5942B4EAF35009F62A3 /* UiViewProgress.swift in Sources */,
 				18768C3A2B3F295B006D675E /* ProfileVC.swift in Sources */,
 				18768C622B45D412006D675E /* QrView.swift in Sources */,
 				18768C232B3F278A006D675E /* GiftsView.swift in Sources */,
@@ -586,6 +590,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Leprechaun/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Privacy camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Privacy photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -615,6 +621,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Leprechaun/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Privacy camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Privacy photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -19,6 +19,12 @@ class InfoView: UIView {
         button.setBackgroundImage(.backBtn, for: .normal)
         return button
     }()
+    
+    private(set) lazy var profileBtn: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(.profileBtn, for: .normal)
+        return button
+    }()
 
     private(set) lazy var imageConteinerView: GradientView = {
         let view = GradientView()
@@ -90,6 +96,7 @@ class InfoView: UIView {
         addSubview(backgroundImage)
         addSubview(infoScrollView)
         addSubview(backBtn)
+        addSubview(profileBtn)
         infoScrollView.addSubview(infoConteinerView)
         infoConteinerView.addSubview(imageConteinerView)
         infoConteinerView.addSubview(subTitleLabel)
@@ -108,6 +115,13 @@ class InfoView: UIView {
             make.left.equalToSuperview().offset(24)
             make.top.equalToSuperview().offset(56)
         }
+        
+        profileBtn.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-24)
+            make.top.equalToSuperview().offset(60)
+            make.size.equalTo(36)
+        }
+
         
         infoScrollView.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(24)

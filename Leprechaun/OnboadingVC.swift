@@ -7,6 +7,7 @@ import UIKit
 
 class OnboadingVC: UIViewController {
     
+    private var timer: Timer?
 
     private var contentView: OnboadingView {
         view as? OnboadingView ?? OnboadingView()
@@ -18,6 +19,7 @@ class OnboadingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         start()
+        animateProgressBar()
     }
     
     private func start() {
@@ -27,6 +29,12 @@ class OnboadingVC: UIViewController {
             navigationController.modalPresentationStyle = .fullScreen
             self.present(navigationController, animated: true)
             navigationController.setNavigationBarHidden(true, animated: false)
+        }
+    }
+    func animateProgressBar() {
+        UIView.animate(withDuration: 3.5) {
+            // Установите конечное значение прогресса
+            self.contentView.loadView.setProgress(1.0, animated: true)
         }
     }
 }
