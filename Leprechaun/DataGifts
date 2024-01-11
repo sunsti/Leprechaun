@@ -3,23 +3,23 @@
 [{
         "id": "feec36a0-f27d-46b4-9d2a-9e52161f6ab4",
         "imageGifts": "giftOne",
-        "title": "ELITE",
+        "title": "FIRESTYLE",
         "credits": "300",
-        "body": "6,1,2"
+        "body": "HOT SALE"
     },
     {
         "id": "b8a74a5c-b397-49bb-8d1b-a35fe7142101",
         "imageGifts": "giftTwo",
         "title": "PREMIUM",
         "credits": "255",
-        "body": "1,3,0"
+        "body": "50% sale \nOn the entire Out collection"
     },
     {
         "id": "dd1e2638-d931-4584-a2b1-5d79171135d6",
         "imageGifts": "giftThree",
-        "title": "PREMIUM",
+        "title": "ELITE",
         "credits": "180",
-        "body": "5,5,2"
+        "body": "25% sale \nOn the entire Elite collection"
         
     },
     {
@@ -27,7 +27,7 @@
         "imageGifts": "giftFour",
         "title": "GOLD",
         "credits": "150",
-        "body": "2,1,9"
+        "body": "35% sale \nOn the entire Gold collection"
     }
 ]
 

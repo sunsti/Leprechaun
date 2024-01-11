@@ -62,7 +62,7 @@ class GiftDetailView: UIView {
     
     private(set) lazy var ingredientsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ingredients"
+        label.text = "description:".uppercased()
         label.textColor = .white
         label.font = UIFont.customFont(font: .mont, style: .light, size: 12)
         label.numberOfLines = 0
