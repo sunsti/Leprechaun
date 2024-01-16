@@ -21,7 +21,7 @@ class GiftCell: UITableViewCell {
     private lazy var scoreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.customFont(font: .mont, style: .black, size: 70)
+        label.font = UIFont.customFont(font: .mont, style: .black, size: 50)
         return label
     }()
     
@@ -104,13 +104,14 @@ class GiftCell: UITableViewCell {
         }
         
         creditLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview().offset(-36)
-            make.centerX.equalToSuperview().offset(48)
+            make.centerY.equalToSuperview().offset(-28)
+            make.centerX.equalToSuperview().offset(72)
         }
         
         cointImage.snp.makeConstraints { make in
-            make.centerY.equalToSuperview().offset(12)
-            make.centerX.equalToSuperview().offset(32)
+            make.left.equalTo(scoreLabel.snp.left).offset(-16)
+            make.top.equalTo(scoreLabel.snp.top).offset(30)
+            make.size.equalTo(26)
         }
     }
     
@@ -137,14 +138,6 @@ class GiftCell: UITableViewCell {
         
         if screenSize.height < smallerScreenHeight {
             scoreLabel.font = UIFont.customFont(font: .mont, style: .black, size: 48)
-            creditLabel.snp.updateConstraints { make in
-                make.centerX.equalToSuperview().offset(72)
-                make.centerY.equalToSuperview().offset(-28)
-            }
-            cointImage.snp.updateConstraints { make in
-                make.centerY.equalToSuperview().offset(4)
-                make.centerX.equalToSuperview().offset(48)
-            }
         }
     }
 }

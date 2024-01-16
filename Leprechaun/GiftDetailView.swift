@@ -72,7 +72,7 @@ class GiftDetailView: UIView {
     private(set) lazy var creditsScoreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.customFont(font: .mont, style: .black, size: 70)
+        label.font = UIFont.customFont(font: .mont, style: .black, size: 48)
         label.numberOfLines = 0
         return label
     }()
@@ -168,9 +168,10 @@ class GiftDetailView: UIView {
             make.top.equalTo(giftDetailImage.snp.bottom).offset(20)
             make.left.equalToSuperview().offset(20)
         }
+        
         creditsLabel.snp.makeConstraints { make in
             make.left.equalTo(ingredientsLabel.snp.right).offset(140)
-            make.top.equalTo(giftDetailImage.snp.bottom).offset(32)
+            make.top.equalTo(giftDetailImage.snp.bottom).offset(28)
         }
         
         creditsScoreLabel.snp.makeConstraints { make in
@@ -180,7 +181,8 @@ class GiftDetailView: UIView {
         
         cointImage.snp.makeConstraints { make in
             make.left.equalTo(ingredientsLabel.snp.right).offset(126)
-            make.top.equalTo(creditsScoreLabel.snp.bottom).offset(-48)
+            make.top.equalTo(creditsScoreLabel.snp.bottom).offset(-40)
+            make.size.equalTo(26)
         }
 
 
@@ -199,7 +201,7 @@ class GiftDetailView: UIView {
         let smallerScreenHeight: CGFloat = 812
 
         if screenSize.height < smallerScreenHeight {
-            creditsScoreLabel.font = UIFont.customFont(font: .mont, style: .black, size: 44)
+            creditsScoreLabel.font = UIFont.customFont(font: .mont, style: .black, size: 36)
             cointImage.snp.makeConstraints { make in
                 make.left.equalTo(ingredientsLabel.snp.right).offset(118)
             }

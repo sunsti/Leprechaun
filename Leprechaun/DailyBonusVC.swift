@@ -114,8 +114,6 @@ extension DailyBonusVC {
             if countTimer == 1 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     UD.shared.balance += self.win
-                    print("win- \(self.win)")
-                    print("\(UD.shared.balance)")
                     self.presentDailyPrizeVC()
                     self.contentView.getBonusButton.isUserInteractionEnabled = true
                 }

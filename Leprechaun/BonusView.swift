@@ -32,7 +32,7 @@ class BonusView: UIView {
     private(set) lazy var pointLabel: UILabel = {
         let label = UILabel()
         label.text = "+100"
-        label.font = UIFont.customFont(font: .mont, style: .black, size: 72)
+        label.font = UIFont.customFont(font: .mont, style: .black, size: 64)
         label.textColor = .white
         label.textAlignment = .center
         return label
@@ -83,8 +83,9 @@ class BonusView: UIView {
         }
         
         pointLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(thankButton.snp.top).offset(-48)
+            make.bottom.equalTo(thankButton.snp.top).offset(-44)
             make.centerX.equalToSuperview()
+            make.height.equalTo(52)
         }
 
         startImageView.snp.makeConstraints { make in

@@ -94,7 +94,7 @@ class HomeView: UIView {
 
         logoImage.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(24)
-            make.left.equalToSuperview().offset(54)
+            make.left.equalToSuperview().offset(32)
         }
         
         
