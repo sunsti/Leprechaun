@@ -7,7 +7,8 @@ import UIKit
 
 class NewsVC: UIViewController {
     
-   private var items = [NewsModel]()
+    private var hUD: UIActivityIndicatorView!
+    private var items = [NewsModel]()
     
     private var contentView: NewsView {
         view as? NewsView ?? NewsView()
@@ -25,8 +26,9 @@ class NewsVC: UIViewController {
         
         contentView.newsTableView.dataSource = self
         contentView.newsTableView.delegate = self
+        configureHUD()
         setupBackButton()
-        loadModelNews()
+        loadingNews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,13 +45,29 @@ class NewsVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func loadModelNews() {
-        service.readFromNewsData { [weak self] models in
-            guard let self = self else { return }
-            self.items = models
-            self.contentView.newsTableView.reloadData()
-        } errorComletion: { error in
-            print("Error")
+    private func configureHUD() {
+        hUD = UIActivityIndicatorView(style: .medium)
+        hUD.hidesWhenStopped = true
+        hUD.color = .gradGreenFour
+        view.addSubview(hUD)
+        hUD.transform = CGAffineTransform(scaleX: 3, y: 3)
+        hUD.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+    }
+    
+    func loadingNews() {
+        Task {
+            do {
+                hUD.startAnimating()
+                items = try await ManagerNetwork.shared.getNews()
+                contentView.newsTableView.reloadData()
+                hUD.stopAnimating()
+            } catch {
+                print("Error: \(error.localizedDescription)")
+                hUD.stopAnimating()
+            }
         }
     }
 }

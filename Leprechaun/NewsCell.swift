@@ -99,6 +99,6 @@ class NewsCell: UITableViewCell {
     
     func setupCell(item: NewsModel) {
         tittleLabel.text = item.title
-        newsImage.image = UIImage(named: item.imageNews)
+        newsImage.image = UIImage(named: item.image)
     }
 }

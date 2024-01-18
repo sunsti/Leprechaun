@@ -8,10 +8,9 @@
 import Foundation
 struct GiftsModel: Decodable {
     
+    let price: Int
     let id: String
-    let imageGifts: String
+    let description: String
+    let image: String
     let title: String
-    let credits: String
-    let body: String
-    
 }

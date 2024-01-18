@@ -129,8 +129,8 @@ class GiftCell: UITableViewCell {
     
     func setupCell(item: GiftsModel) {
         titleLabel.text = item.title
-        giftImage.image = UIImage(named: item.imageGifts)
-        scoreLabel.text = item.credits
+        giftImage.image = UIImage(named: item.image)
+        scoreLabel.text = String(item.price)
     }
     private func adjustFontSizesForScreenSize() {
         let screenSize = UIScreen.main.bounds

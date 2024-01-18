@@ -29,10 +29,10 @@ class GiftDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentView.giftDetailImage.image = UIImage(named: model.imageGifts)
+        contentView.giftDetailImage.image = UIImage(named: model.image)
         contentView.subTitleGiftLabel.text = model.title
-        contentView.creditsScoreLabel.text = model.credits
-        contentView.ingredientsScoreLabel.text = model.body
+        contentView.creditsScoreLabel.text = String(model.price)
+        contentView.ingredientsScoreLabel.text = model.description
         
         setupBackButton()
     }

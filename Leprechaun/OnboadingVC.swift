@@ -22,19 +22,27 @@ class OnboadingVC: UIViewController {
         animateProgressBar()
     }
     
+    
     private func start() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-            let vc = HomeVC()
-            let navigationController = UINavigationController(rootViewController: vc)
-            navigationController.modalPresentationStyle = .fullScreen
-            self.present(navigationController, animated: true)
-            navigationController.setNavigationBarHidden(true, animated: false)
+        Task {
+            do {
+                try await ManagerNetwork.shared.authenticate()
+                let vc = HomeVC()
+                let navigationController = UINavigationController(rootViewController: vc)
+                navigationController.modalPresentationStyle = .fullScreen
+                present(navigationController, animated: true)
+                navigationController.setNavigationBarHidden(true, animated: false)
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
         }
     }
     func animateProgressBar() {
-        UIView.animate(withDuration: 3.5) {
+        UIView.animate(withDuration: 1.5) {
             // Установите конечное значение прогресса
             self.contentView.loadView.setProgress(1.0, animated: true)
         }
     }
+    
+    
 }

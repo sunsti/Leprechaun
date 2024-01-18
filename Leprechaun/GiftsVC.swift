@@ -7,6 +7,7 @@ import UIKit
 
 class GiftVC: UIViewController {
     
+    private var hUD: UIActivityIndicatorView!
     var items = [GiftsModel]()
     
     private var contentView: GiftView {
@@ -22,6 +23,7 @@ class GiftVC: UIViewController {
         super.viewDidLoad()
         contentView.giftTableView.dataSource = self
         contentView.giftTableView.delegate = self
+        configureHUD()
         loadModel()
         setupBackButton()
     }
@@ -30,13 +32,29 @@ class GiftVC: UIViewController {
         contentView.backBtn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
+    private func configureHUD() {
+        hUD = UIActivityIndicatorView(style: .medium)
+        hUD.hidesWhenStopped = true
+        hUD.color = .gradGreenFour
+        view.addSubview(hUD)
+        hUD.transform = CGAffineTransform(scaleX: 3, y: 3)
+        hUD.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+    }
+
     func loadModel() {
-        service.readFromGiftsData{ [weak self] models in
-            guard let self = self else { return }
-            self.items = models
-            self.contentView.giftTableView.reloadData()
-        } errorComletion: { error in
-            print("Error")
+        Task {
+            do {
+                hUD.startAnimating()
+                items = try await ManagerNetwork.shared.getGifts()
+                contentView.giftTableView.reloadData()
+                hUD.stopAnimating()
+            } catch {
+                print("Error: \(error.localizedDescription)")
+                hUD.stopAnimating()
+            }
         }
     }
     
