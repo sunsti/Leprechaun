@@ -1,15 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "Object@4x 1.pdf",
+      "filename" : "giftThree.pdf",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "preserves-vector-representation" : true
   }
 }
