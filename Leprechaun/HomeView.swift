@@ -23,9 +23,9 @@ class HomeView: UIView {
 
     private lazy var appLabel: UILabel = {
         let label = UILabel()
-        label.text = "\(Settings.appTitle)"
+        label.text = "Loyal\nLeprechaun"
         label.font = UIFont.customFont(font: .mont, style: .black, size: 36)
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.textColor = .white
         label.numberOfLines = 0
         return label

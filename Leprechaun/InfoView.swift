@@ -42,7 +42,7 @@ class InfoView: UIView {
     
     private(set) var subTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "\(Settings.appTitle)"
+        label.text = "Loyal\nLeprechaun"
         label.textColor = .white
         label.font = UIFont.customFont(font: .mont, style: .black, size: 48)
         label.textAlignment = .center

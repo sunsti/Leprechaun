@@ -586,6 +586,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Leprechaun/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Leprechaun;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Privacy camera";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Privacy photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -598,10 +599,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tsarevichD.Leprechaun;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dongo.leprechaun-loyalty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -617,6 +619,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Leprechaun/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Leprechaun;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Privacy camera";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Privacy photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -629,10 +632,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tsarevichD.Leprechaun;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dongo.leprechaun-loyalty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
