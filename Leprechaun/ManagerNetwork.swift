@@ -18,7 +18,7 @@ class ManagerNetwork {
     
     private let username = "admin"
     private let password = "iCAleretAIgestRawE"
-    private let host = "https://leprechaun-backend-83a025e24ac9.herokuapp.com"
+    private let host = "https://loyal-leprechaun.space"
     private var token: String?
     
     private init() {}
