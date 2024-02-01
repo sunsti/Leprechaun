@@ -101,7 +101,7 @@ class DailyBonusView: UIView {
     
     private(set)  var timerImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .leprikonImg
+        imageView.image = .groupClevers
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -223,8 +223,7 @@ class DailyBonusView: UIView {
         }
         
         timerImage.snp.makeConstraints { (make) in
-            make.top.equalTo(timerCountLabel.snp.bottom).offset(67)
-            make.bottom.equalTo(okBonusButton.snp.top).offset(-67)
+            make.centerY.equalToSuperview()
             make.left.right.equalToSuperview().inset(55)
         }
         
@@ -237,6 +236,12 @@ class DailyBonusView: UIView {
     
             if screenSize.height < smallerScreenHeight {
                 bonusLabel.font = UIFont.customFont(font: .mont, style: .black, size: 24)
+                timerImage.snp.makeConstraints { (make) in
+                    make.centerY.equalToSuperview()
+                    make.left.right.equalToSuperview().inset(55)
+                    make.size.equalTo(198)
+                }
+
             }
         }
 }

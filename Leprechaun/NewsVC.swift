@@ -14,7 +14,6 @@ class NewsVC: UIViewController {
         view as? NewsView ?? NewsView()
     }
 
-    let service = ServiceData.shared
     
     override func loadView() {
         view = NewsView()

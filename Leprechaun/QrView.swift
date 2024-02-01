@@ -43,7 +43,7 @@ class QrView: UIView {
     
     private(set) lazy var hideButton: UIButton = {
         let button = UIButton()
-        button.setTitle("HIDE", for: .normal)
+        button.setTitle("BACK", for: .normal)
         button.setTitleColor(UIColor.gradGreenOne, for: .normal)
         button.backgroundColor = .white
         button.titleLabel?.font = UIFont.customFont(font: .mont, style: .black, size: 24)

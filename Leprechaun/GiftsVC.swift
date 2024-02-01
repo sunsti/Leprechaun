@@ -14,7 +14,6 @@ class GiftVC: UIViewController {
         view as? GiftView ?? GiftView()
     }
     
-    let service = ServiceData.shared
     
     override func loadView() {
         view = GiftView()

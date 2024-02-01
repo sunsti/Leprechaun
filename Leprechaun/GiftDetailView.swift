@@ -72,7 +72,7 @@ class GiftDetailView: UIView {
     private(set) lazy var creditsScoreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.customFont(font: .mont, style: .black, size: 48)
+        label.font = UIFont.customFont(font: .mont, style: .black, size: 44)
         label.numberOfLines = 0
         return label
     }()
