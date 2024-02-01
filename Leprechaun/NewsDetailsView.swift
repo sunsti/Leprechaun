@@ -11,6 +11,7 @@ class NewsDetailView: UIView {
     private lazy var backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .bg
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 
@@ -52,6 +53,7 @@ class NewsDetailView: UIView {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
