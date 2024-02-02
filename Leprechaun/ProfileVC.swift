@@ -7,7 +7,7 @@ import UIKit
 class ProfileVC: UIViewController {
     
     private let imagePicker = UIImagePickerController()
-    
+    let ud = UD.shared
     
     private var contentView: ProfileView {
         view as? ProfileView ?? ProfileView()
@@ -22,6 +22,15 @@ class ProfileVC: UIViewController {
         imagePickerConfigure()
         savedName()
         tappedButtons()
+        if let image = getImageFromFileManager() {
+            contentView.profileBtn.setImage(image, for: .normal)
+        }
+        if let savedUserName = ud.userName,
+           !savedUserName.isEmpty {
+            contentView.profileTextField.text = savedUserName
+        } else {
+            contentView.profileTextField.placeholder = "USER #\(ud.userId)"
+        }
     }
     
     private func imagePickerConfigure() {
@@ -34,7 +43,8 @@ class ProfileVC: UIViewController {
          if !UD.shared.isNotFirst {
              UD.shared.isNotFirst = true
          }
-         if let savedUserName = UD.shared.userName {
+         if let savedUserName = UD.shared.userName,
+            !savedUserName.isEmpty {
              contentView.profileTextField.text = savedUserName
          }
     }
@@ -42,6 +52,13 @@ class ProfileVC: UIViewController {
     private func tappedButtons() {
         contentView.backBtn.addTarget(self, action: #selector(goButtonTappedHome), for: .touchUpInside)
         contentView.profileBtn.addTarget(self, action: #selector(goTakePhoto), for: .touchUpInside)
+        let hide = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        contentView.addGestureRecognizer(hide)
+        contentView.payHideButton.addTarget(self, action: #selector(goButtonTappedHome), for: .touchUpInside)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     @objc func goButtonTappedHome() {
@@ -68,14 +85,39 @@ class ProfileVC: UIViewController {
         }
     }
     
+    func getImageFromFileManager() -> UIImage? {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let imageUrl = documentsDirectory.appendingPathComponent("image.jpg")
+        if let data = try? Data(contentsOf: imageUrl),
+           let image = UIImage(data: data) {
+            return image
+        }
+        return nil
+    }
+    
+    private func saveImageToFile(_ image: UIImage) {
+        guard let data = image.jpegData(compressionQuality: 1.0) else {
+            return
+        }
+        
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let imageUrl = documentsDirectory.appendingPathComponent("image.jpg")
+        
+        do {
+            try data.write(to: imageUrl)
+        } catch {
+            print("Error saving image to file: \(error)")
+        }
+    }
+    
 }
 
 extension ProfileVC: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if info[.originalImage] is UIImage {
-            
+        if let image = info[.originalImage] as? UIImage {
+            contentView.profileBtn.setImage(image, for: .normal)
+            saveImageToFile(image)
         }
-        
         dismiss(animated: true, completion: nil)
     }
     

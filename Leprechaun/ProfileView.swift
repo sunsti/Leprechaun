@@ -23,6 +23,8 @@ class ProfileView: UIView,UITextFieldDelegate {
 
     private(set) lazy var profileBtn: UIButton = {
         let button = UIButton()
+        button.layer.cornerRadius = 80
+        button.clipsToBounds = true
         button.setBackgroundImage(UIImage.cameraProfile, for: .normal)
         return button
     }()
@@ -42,6 +44,21 @@ class ProfileView: UIView,UITextFieldDelegate {
         textField.resignFirstResponder()
         return textField
     }()
+    
+    private lazy var saveButton: UIButton = {
+       let button = UIButton()
+        return button
+    }()
+    
+    private(set) lazy var payHideButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Save", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor.gradGreenOne
+        button.titleLabel?.font = UIFont.customFont(font: .mont, style: .black, size: 24)
+        button.layer.cornerRadius = 8
+        return button
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,7 +72,7 @@ class ProfileView: UIView,UITextFieldDelegate {
     }
     
     private func setupUI() {
-        [backView,backBtn,profileBtn,profileTextField] .forEach(addSubview(_:))
+        [backView,backBtn,profileBtn,profileTextField, payHideButton] .forEach(addSubview(_:))
 
     }
     private func setUpConstraints(){
@@ -79,6 +96,12 @@ class ProfileView: UIView,UITextFieldDelegate {
             make.top.equalTo(profileBtn.snp.bottom).offset(40)
             make.left.right.equalToSuperview().inset(24)
             make.height.equalTo(66)
+        }
+        
+        payHideButton.snp.makeConstraints { make in
+            make.left.right.bottom.equalToSuperview().inset(20)
+            make.height.equalTo(46)
+            make.width.equalTo(245)
         }
     }
     
